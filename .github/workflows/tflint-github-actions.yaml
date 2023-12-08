@@ -37,7 +37,7 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
 
     - name: Run TFLint Now
-      run: tflint -f compact
+      run: tflint -f compact --recursive
     #- uses: terraform-linters/setup-tflint@v3
       #with:
       #  tflint_wrapper: true
