@@ -10,7 +10,7 @@ terraform {
 }
 
 resource "aws_launch_configuration" "example" {
-  image_id        = "ami-0505148b3591e4c07zzzz"
+  image_id        = "ami-0505148b3591e4c07"
   #"ami-0cfd0973db26b893b"
   #"ami-0fb653ca2d3203ac1"
   instance_type   = var.instance_type
