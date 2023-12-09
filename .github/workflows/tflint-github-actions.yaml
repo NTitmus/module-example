@@ -36,6 +36,12 @@ jobs:
         # https://github.com/terraform-linters/tflint/blob/master/docs/user-guide/plugins.md#avoiding-rate-limiting
         GITHUB_TOKEN: ${{ github.token }}
 
+    - name: Change directory
+      run: cd ./prod/services/webserver-cluster
+
+    - name: Terraform init
+      run: terraform init
+
     - name: Run TFLint Now
       run: tflint --recursive -f compact
     #- uses: terraform-linters/setup-tflint@v3
