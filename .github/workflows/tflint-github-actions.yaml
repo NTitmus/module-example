@@ -43,7 +43,7 @@ jobs:
       run: ls -la
 
     - name: Terraform init
-      run: terraform init
+      run: terraform -chdir=./prod/services/webserver-cluster init
 
     - name: Run TFLint Now
       run: tflint --recursive -f compact
