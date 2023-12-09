@@ -39,6 +39,9 @@ jobs:
     - name: Change directory
       run: cd ./prod/services/webserver-cluster
 
+    - name: list contents of directory
+      run: ls -la
+
     - name: Terraform init
       run: terraform init
 
