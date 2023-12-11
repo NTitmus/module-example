@@ -5,6 +5,7 @@ config {
   module = true
   force = false
   disabled_by_default = false
+  call_module_type = "all"
 
   #ignore_module = {
   #  "terraform-aws-modules/vpc/aws"            = true
