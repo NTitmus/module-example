@@ -52,6 +52,9 @@ jobs:
     - name: Terraform init
       run: terraform -chdir=./prod/services/webserver-cluster init
 
+    - name: Terraform init
+      run: terraform init
+
     - name: Run TFLint Now
       run: tflint --recursive -f compact
     
