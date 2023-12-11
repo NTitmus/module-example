@@ -42,10 +42,14 @@ jobs:
     - name: list contents of directory
       run: ls -la
 
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AK }}
+        aws-secret-access-key: ${{ secrets.SAK }}
+        aws-region: eu-west-2
+
     - name: Terraform init
-      env: 
-        AWS_ACCESS_KEY_ID: ${{secrets.AK}}
-        AWS_SECRET_ACCESS_KEY: ${{secrets.SAK}}
       run: terraform -chdir=./prod/services/webserver-cluster init
 
     - name: Run TFLint Now
