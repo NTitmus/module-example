@@ -43,6 +43,9 @@ jobs:
       run: ls -la
 
     - name: Terraform init
+      env: 
+        AWS_ACCESS_KEY_ID: ${{secrets.AK}}
+        AWS_SECRET_ACCESS_KEY: ${{secrets.SAK}}
       run: terraform -chdir=./prod/services/webserver-cluster init
 
     - name: Run TFLint Now
