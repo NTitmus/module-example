@@ -56,7 +56,7 @@ jobs:
       run: terraform init
 
     - name: Run TFLint Now
-      run: tflint --recursive -f compact
+      run: tflint --recursive --call-module-type=all -f compact
     
     #- uses: terraform-linters/setup-tflint@v3
       #with:
